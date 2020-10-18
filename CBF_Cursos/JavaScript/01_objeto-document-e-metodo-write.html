@@ -7,14 +7,60 @@
 </head>
 
 <body>
+  <span class="qsall"></span><!--teste-->
 <script>
-  // "document" é um objeto e serve como um ponto de entrada para o conteúdo da página (a árvore DOM)
-  // "write" é um método
+  // "document" é um objeto e serve como um ponto de entrada para o conteúdo da página (a árvore DOM) e "write" é um método.
   document.write("Teste");
   
   
-  // Também é possível adicionar elementos HTML através do objeto write. Obs: não pode usar o mesmo tipo de aspas dentro da string.
-  document.write("<h1 style='color: #FFF; background-color: #000;'>Olá!</h1>");
+  
+  // Também é possível adicionar elementos HTML dentro do método write. Obs: não pode usar o mesmo tipo de aspas que foi usado para abrir e fechar a string.
+  document.write("<h1 style='color: #FFF; background-color: #000; border-radius: 20px; text-align: center;'>Olá!</h1>");
+  
+  
+  
+  // Criando um elemento com o método write e adicionando texto a ele.
+  document
+  .write("<p id='appendText'></p>");
+  
+  var appendText = document
+  .getElementById('appendText');
+  
+  appendText.innerHTML = "Hello World!";
+  
+  
+  
+  // Estilizando o elemento que contém o id "appendText". Obs: Valores das propriedades CSS que contém letras precisam estar entre aspas (height = "10px") e valores que contém apenas números, não precisam (fontWeight = 700 (também funcionam entre aspas)).
+  var visual = appendText.style;
+  
+  visual.backgroundColor = "blue";
+  visual.borderRadius = "20px";
+  visual.height = "50px";
+  
+  visual.textAlign = "center";
+  visual.color = "lightgreen";
+  visual.fontWeight = 800;
+  
+  visual.display = "flex";
+  visual.alignItems = "center";
+  visual.justifyContent = "center";
+  
+  document
+  .body
+  .style
+  .fontFamily = "sans-serif";
+  
+  
+  
+  // "querySelector" retorna o primeiro elemento dentro de um documento (em ordem de profundidade). Funciona como seletores CSS (também pega .classes, #id's). Para pegar todos os elementos com o mesmo nome passado, use "querySelectorAll".
+  document
+  .querySelector("title")
+  .innerHTML = "document.write";
+  
+  // Exemplo com CSS
+  document
+  .querySelector("span.qsall")
+  .innerHTML = "Aoba 🤠👍<br>";
 </script>
 </body>
 </html>
