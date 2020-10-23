@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>variáveis</title>
+</head>
+<body>
+<script>
+  // Declarando uma variável indefinida. Obs: pode ser adicionado um valor posteriormente.
+  var azeitona;
+  azeitona = "ruim";
+  // Para verificar um tipo de dado, utilize "typeof". Ex: typeof azeitona
+  
+  
+
+  // Outro método de criar variáveis sem utilizar "var", "let", ou "const".
+  curso = "Javascript";
+  cursoNumero = 18;
+
+
+
+  // Valores entre aspas ("" ou '') serão valores do tipo string
+  var valueString = "";
+  
+  
+  
+  // Valores numéricos são considerados do tipo number. Obs: qualquer tipo de número (Ex: 0.172, 10.31, etc).
+  var valueNumber = 89;
+  
+  
+  
+  // Valores numéricos entre aspas serão considerados do tipo string.
+  var stringWithNumber = "90";
+  
+  
+  
+  // Concatenar
+  var nome = "Carlos";
+  var idade = 20;
+  var spc = " ";
+  
+  console.log(nome +spc+ idade);
+  
+  console.log(idade + idade);    // 40
+  // String com string ele concatena, string com number também irá concatenar, e number com number será uma soma.
+  
+  
+  
+  // Caso tenhamos uma variável string com um valor numérico, é possível converte-lo de 4 modos diferentes.
+  // Utilizando o operador "+".
+  var plusSign = +stringWithNumber;
+  
+  // Utilizando o objeto "Number()".
+  var withNumber = Number(stringWithNumber);
+  
+  // Uma string numérica pode conter caracteres não numericos como "314e-2", nesse caso podemos usar a função parseFloat().
+  var numberWithLetter = "382e+7";
+  var withParseInt = parseFloat(numberWithLetter); // 3820000000.0
+  /* estudar sobre "parseInt()" */
+</script>
+</body>
+</html>

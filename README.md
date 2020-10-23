@@ -1,2 +1,2 @@
 ## 📝 Estudos
-Uns estudos aí
+Uns estudos aí 😶

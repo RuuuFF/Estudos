@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>prompt</title>
+</head>
+
+<body>
+<script>
+  // "prompt" é um método do objeto "window", e cria uma caixa de mensagem, com um input de texto, que coleta o dado passado e o armazena em uma variável.
+  
+  // "prompt" aceita dois parâmetros separados por vírgula. O primeiro é o exibido na caixa e o segundo é algo já preenchido no input de texto.
+  var txt1 = "Quantos anos você tem?";
+  var txt2 = 20;
+  var idade = prompt(txt1, txt2);
+  
+  alert("Tipo de dado: " + typeof idade);
+  // O dado ficará armazenado como string, mesmo sendo um número passado.
+  // Caso nada seja passado, retornará null.
+  
+  
+  
+  // Elementos do HTML não funcionam dentro de prompt.
+  // Para quebras de linha, utilize "\n". Existem outros atalhos de formatação.
+</script>
+</body>
+</html>

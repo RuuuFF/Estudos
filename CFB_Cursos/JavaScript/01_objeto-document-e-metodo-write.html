@@ -8,12 +8,14 @@
 
 <body>
   <span class="qsall"></span><!--teste-->
+  <span class="qsall"></span>
 <script>
   // "document" é um objeto e serve como um ponto de entrada para o conteúdo da página (a árvore DOM) e "write" é um método.
   document.write("Teste");
   
   
   
+  // "write" é um método de "document"
   // Também é possível adicionar elementos HTML dentro do método write. Obs: não pode usar o mesmo tipo de aspas que foi usado para abrir e fechar a string.
   document.write("<h1 style='color: #FFF; background-color: #000; border-radius: 20px; text-align: center;'>Olá!</h1>");
   
@@ -21,10 +23,10 @@
   
   // Criando um elemento com o método write e adicionando texto a ele.
   document
-  .write("<p id='appendText'></p>");
+    .write("<p id='appendText'></p>");
   
   var appendText = document
-  .getElementById('appendText');
+    .getElementById('appendText');
   
   appendText.innerHTML = "Hello World!";
   
@@ -46,21 +48,30 @@
   visual.justifyContent = "center";
   
   document
-  .body
-  .style
-  .fontFamily = "sans-serif";
+    .body
+    .style
+    .fontFamily = "sans-serif";
   
   
   
-  // "querySelector" retorna o primeiro elemento dentro de um documento (em ordem de profundidade). Funciona como seletores CSS (também pega .classes, #id's). Para pegar todos os elementos com o mesmo nome passado, use "querySelectorAll".
+  // "querySelector" retorna o primeiro elemento dentro de um documento (em ordem de profundidade). Funciona como seletores CSS (também pega .classes, #id's).
   document
-  .querySelector("title")
-  .innerHTML = "document.write";
+    .querySelector("title")
+    .innerHTML = "document.write";
   
-  // Exemplo com CSS
-  document
-  .querySelector("span.qsall")
-  .innerHTML = "Aoba 🤠👍<br>";
+  
+  
+  // "querySelectorAll" retorna todos os elementos no documento que correspondem a um seletor CSS especificado, como um objeto NodeList estático. O objeto NodeList representa uma coleção de nós. Os nós podem ser acessados por números de índice. O índice começa em 0.
+  // Mais detalhes: https://www.w3schools.com/jsref/met_document_queryselectorall.asp
+  let span = document
+    .querySelectorAll("span.qsall")
+  
+  var i;
+  for (i = 0; i < span.length; i++) {
+    span[i].innerHTML = "querySelectorAll<br>";
+    
+    span[i].style.backgroundColor = "pink";
+  }
 </script>
 </body>
 </html>
