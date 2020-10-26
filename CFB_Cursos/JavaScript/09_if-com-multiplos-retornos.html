@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>if com multiplos retornos</title>
+</head>
+
+<body>
+<script>
+  // Use "else if" para especificar uma nova condição a ser testada se a primeira condição for falsa.
+  // "else if" pode ser utilizado multiplas vezes.
+  var hours = new Date().getHours() + 1;
+  // O horário ta errado porque cancelaram o horário de verão e ta bugando tudo.
+  var res;
+  
+  // Arrumando possível erro ao dar meia noite (24h).
+  if (hours == 25) {
+    hours = 24;
+  }
+  
+  if (hours >= 5 && hours < 12) {
+    res = "Bom dia";
+  } else if (hours < 18) {
+    res = "Boa tarde";
+  } else {
+    res = "Boa noite";
+  }
+  
+  console.log(res +" "+ hours);
+  
+  // https://www.w3schools.com/js/js_if_else.asp
+</script>
+</body>
+</html>
