@@ -7,6 +7,7 @@
 </head>
 
 <body>
+  <p id="greeting"></p>
 <script>
   // Use "else if" para especificar uma nova condição a ser testada se a primeira condição for falsa.
   // "else if" pode ser utilizado multiplas vezes.
@@ -14,20 +15,22 @@
   // O horário ta errado porque cancelaram o horário de verão e ta bugando tudo.
   var res;
   
-  // Arrumando possível erro.
+  // Arrumando possível erro durante esse bug do horário.
   if (hours == 24) {
     hours = 0;
   }
   
   if (hours >= 5 && hours < 12) {
     res = "Bom dia! 🌄";
-  } else if (hours < 18) {
+  } else if (hours >= 12 && hours < 18) {
     res = "Boa tarde! 🌇";
   } else {
     res = "Boa noite! 🌃";
   }
   
-  console.log(res);
+  document
+    .querySelector("#greeting")
+      .innerHTML= res +" "+ hours;
   
   // https://www.w3schools.com/js/js_if_else.asp
 </script>
