@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>if aninhado</title>
+</head>
+
+<body>
+  <p id="text"></p>
+<script>
+  // "if aninhado" é quando temos um "if" dentro de outro.
+  var nota = Math.ceil(Math.random() * 100);
+  var res;
+  
+  // Se "nota" for maior ou igual a 60, o aluno é aprovado.
+  if (nota >= 60) {
+    // Adiciona o valor "Aprovado" à variável "res".
+    res = "Aprovado";
+    
+    // Se "nota" for igual a 100, " com excelência. 🥇" é concatenado a variável "res". Caso contrário, ele é aprovado normalmente (". 🎉").
+    if (nota == 100) {
+      res += " com excelência. 🥇";
+    } else {
+      res += ". 🎉";
+    }
+  } 
+  // Se "nota" for maior ou igual 40, o aluno ficará em recuperação.
+  else if (nota >= 40) {
+    res = "Em recuperação. 🤕";
+  }
+  // Caso "nota" seja menor que 40, a variável "res" receberá o valor "Reprovado".
+  else {
+    res = "Reprovado";
+    // Se "nota" for maior ou igual a 20, o aluno será reprovado normalmente (". 😔"). Se for menor, ele será expulso além de reprovado. 🤝
+    if (nota >= 20) {
+      res += ". 😔";
+    } else {
+      res += " e expulso da escola. 😡";
+    }
+  }
+  
+  document.querySelector("#text")
+    .innerHTML = res;
+  console.log(nota);
+  
+  // https://www.w3schools.com/js/js_if_else.asp
+</script>
+</body>
+</html>
