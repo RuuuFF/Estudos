@@ -14,20 +14,20 @@
   // O horário ta errado porque cancelaram o horário de verão e ta bugando tudo.
   var res;
   
-  // Arrumando possível erro ao dar meia noite (24h).
-  if (hours == 25) {
-    hours = 24;
+  // Arrumando possível erro.
+  if (hours == 24) {
+    hours = 0;
   }
   
   if (hours >= 5 && hours < 12) {
-    res = "Bom dia";
+    res = "Bom dia! 🌄";
   } else if (hours < 18) {
-    res = "Boa tarde";
+    res = "Boa tarde! 🌇";
   } else {
-    res = "Boa noite";
+    res = "Boa noite! 🌃";
   }
   
-  console.log(res +" "+ hours);
+  console.log(res);
   
   // https://www.w3schools.com/js/js_if_else.asp
 </script>
