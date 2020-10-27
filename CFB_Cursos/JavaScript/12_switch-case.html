@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>switch - case</title>
+</head>
+
+<body>
+  <p id="text"></p>
+<script>
+  // A instrução "switch" é usada para executar ações diferentes com base em condições diferentes.
+  // A expressão "switch" é avaliada uma vez. O valor da expressão é comparado com os valores de cada "case". Se houver uma correspondência, o bloco de código associado é executado. Se não houver correspondência, o bloco de código padrão ("default") é executado.
+  // Quando o JavaScript atinge uma palavra-chave "break", ele sai do bloco "switch". Se "break" for omitido, ele executará o caso seguinte até encontrar um "break", ou o final do bloco "switch".
+  // O case "default" não precisa ser o último case em um bloco de "switch". Caso "default" fique em qualquer outro lugar, ele precisará de um "break".
+  var points = Math
+    .ceil(Math.random() * 1200);
+  var res;
+  var pos;
+  
+  // Quando só tiver UMA instrução, as chaves podem ser omitidas.
+  if (points >= 1000) pos = 1;
+  else if (points >= 800) pos = 2;
+  else if (points >= 600) pos = 3;
+  else pos = 0;
+  
+  switch (pos) {
+    case 1:
+      res = "Primeiro! 🥇";
+      break;
+    case 2:
+      res = "Segundo! 🥈";
+      break;
+    case 3:
+      res = "Terceiro! 🥉";
+      break;
+    default:
+      res = "Infelizmente não está no pódio. 😔";
+  }
+  
+  // Se for uma das condições (1, 2 ou 3), ele executará o "case". Caso contrário, alguém vai ganhar lembrancinha.
+  switch (pos) {
+    case 1:
+    case 2:
+    case 3:
+      res += "<br>🎆🎇🎆🎇🎆🎇";
+      break;
+    default:
+      res += "<br>Lembrancinha de participação. 🎁";
+  }
+  
+  document.querySelector("#text")
+    .innerHTML = res;
+  console.log(points);
+    
+  // Utilizar "if" quando não tiver certeza do valor da variável.
+  // Utilizar "switch" quando sei os valores que poderão estar na variável.
+</script>
+</body>
+</html>
