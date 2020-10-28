@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>array - vetor 1</title>
+</head>
+
+<body>
+<script>
+  // "arrays" são usados para armazenar vários valores em uma única variável.
+  // Um "array" pode conter muitos valores sob um único nome e você pode acessar os valores referindo-se a um número de índice (nomeDoArray[índice]).
+  
+  // Maneiras de criar um array:
+  // var carro = new Array();
+  // var carro = [];
+ 
+  // Os valores de um array podem ser inseridos dentro dos colchetes "[]", sendo separados por vírgula.
+  var itens = ["corda", "faca", "comida", "barraca", "pé de cabra", "isqueiro"];
+  var mochila = [];
+  
+  // Adicionando a mochila os valores [3, 4, 5]. Seus índices serão 0, 1, 2, etc...
+  mochila.push(3);
+  mochila.push(4);
+  mochila.push(5);
+  
+  console.log(itens[mochila[2]]);
+  
+  
+  var cor = [];
+  // Maneiras de adicionar um novo elemento a um "array" usando o método push() ou atribuindo pelo índice.
+  cor.push("rosa");
+  cor.push("azul");
+  cor[2] = "vermelho";
+  cor[3] = "laranja";
+  
+  // A propriedade "length" (comprimento) retorna o número de elementos.
+  // O índice do último elemento sempre vai ser "length - 1".
+  /*
+  console.log(cor[cor.length - 1]);
+  */
+</script>
+</body>
+</html>
