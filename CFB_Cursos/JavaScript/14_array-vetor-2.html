@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>arrays - vetor 2</title>
+</head>
+
+<body>
+  <p id="text"></p>
+<script>
+  var bag = [];
+  var bagLeng;
+  
+  
+  // "unshift()" insere um item no início do array. Cada instrução "unshift" seguinte adicionará o item na frente da anterior.
+  // "push()" insere o item no final do array.
+  bag.push("corda"); // 3
+  bag.push("faca"); // 4
+  bag.push("isqueiro"); // 5
+  bag.push("lanterna"); // 6
+  bag.unshift("barra de cereal"); // 2
+  bag.unshift("canivete"); // 1
+  bag.unshift("bússola"); // 0
+  
+  
+  // "shift" remove um item do início do array.
+  // "pop" remove um item do final do array.
+  bag.pop() // remove "lanterna".
+  bag.shift() // remove "bússola".
+  
+  
+  // "splice" remove um item de qualquer lugar do array.
+  // parâmetros: 1º: número do índice; 2º: quantos itens remover a partir do índice fornecido.
+  bag.splice(2, 2); // remove, a partir do índice 2, 2 elementos ("corda" e "faca").
+  // Removendo um elemento: "splice(1, 1)".
+  
+  // Ao remover algum item do array os índices podem mudar.
+  
+  
+  var indice = 0;
+  // enquanto "indice" for menor que "bag.length" o loop continua. 
+  while (indice < bag.length) {
+    console.log(bag[indice] +" - "+ indice);
+    // incrementando "indice" para o próximo loop.
+    indice++;
+  }
+  
+  bagLeng = bag.length;
+  
+  // http://www.linhadecodigo.com.br/artigo/3554/funcoes-de-manipulacao-de-vetores-do-javascript.aspx
+</script>
+</body>
+</html>
