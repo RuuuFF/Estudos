@@ -38,7 +38,7 @@
   shopCart.push(item9);
   shopCart.push(item10);
   
-  // Para acessar um elemento dentro de "item" que está dentro de "shopCart" utilize NomeDoarray[IndiceDoItem1][indiceDoItem2].
+  // Para acessar um valor dentro de "item" que está dentro de "shopCart" utilize NomeDoarray[IndiceDoItem1][indiceDoItem2].
   // Exemplo: shopCart[0][0] item1/Arroz
   
   // Pergunta ao usuário
@@ -48,11 +48,11 @@
     // Pega o número de itens dentro de "shopCart"
     var cartLeng = shopCart.length;
     
-    // Pegando o elemento HTML clm id "text".
+    // Pegando o elemento HTML com id "text".
     var putText = document
       .querySelector("#text");
       
-    // Variavel para incremento no loop e funciona como índice dos itens no array.
+    // Variavel para incremento no loop e também funciona como índice dos itens no array.
     var lengItem = 0;
     
     // Enquanto "lengItem" for menor que "cartlent", o loop continua.
@@ -63,7 +63,7 @@
         .indexOf(item);
       console.log(index);
       
-      // Se "index" for igual ou maior que 0, ele entrará e fará a impressão dos itens.
+      // Se "index" for igual ou maior que 0, ele entrará e fará a impressão dos valores no "item".
       if (index >= 0) {
         putText.innerHTML = "Item: "+shopCart[lengItem][0]+"<br>Quantidade: "+shopCart[lengItem][1]+"<br>Preço: "+shopCart[lengItem][2];
         
