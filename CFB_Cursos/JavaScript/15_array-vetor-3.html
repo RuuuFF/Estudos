@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>array - vetor 3</title>
+</head>
+
+<body>
+  <p id="text"></p>
+<script>
+  var color = [];
+  
+  // "push()" insere o item no final do array.
+  color.push("rosa");
+  color.push("azul");
+  color.push("vermelho");
+  color.push("laranja");
+  color.push("marrom");
+  color.push("verde");
+  
+  var searchItem = prompt("Diga uma cor e retornamos sua posição");
+  var txtEl = document
+    .querySelector("#text");
+    
+  // "indexOf" recebe como parâmetro um valor a ser localizado no array e retorna a sua posição na lista caso ele seja encontrado.
+  // Caso o elemento não seja localizado, o retorno é o valor -1.
+  pos = color.indexOf(searchItem);
+  
+  if (pos >= 0) {
+    txtEl.innerHTML = "Sua cor: \"" + searchItem + "\"<br>Seu índice: " + pos;
+  } else {
+    txtEl.innerHTML = "\""+ searchItem + "\" não encontrado.";
+  }
+  
+
+  var num1 = [1, 3, 5, 7, 9, 2, 4, 6, 8, 0];
+  var num2 = ["oito", "zero", "cinco", "sete", "três", "nove", "quatro", "um", "seis", "dois"];
+  
+  // "concat" é utilizado para juntar dois ou mais arrays em um novo array sem alterar os outros.
+  var numConcat = num1.concat(num2);
+
+  // "sort" ordena os elementos do array. Strings em ordem alfabética e number do menor para o maior.
+  numConcat.sort();
+  
+  // "reverse" inverte os elementos de um vetor, fazendo com que o último se torne o primeiro, o primeiro se torne o último e os intermediários sigam a mesma lógica.
+  numConcat.reverse();
+  
+  // "join" retorna uma string contendo todos os elementos do array separados por vírgula. No parâmetros é informado um texto para ser vir como separador.
+  var numbers = numConcat.join(" - ");
+  
+  
+  // http://www.linhadecodigo.com.br/artigo/3554/funcoes-de-manipulacao-de-vetores-do-javascript.aspx
+</script>
+</body>
+</html>

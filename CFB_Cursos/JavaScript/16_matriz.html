@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Arrays bidimencionais</title>
+</head>
+
+<body>
+  <p id="text"></p>
+<script>
+  // Arrays bidimencionais
+  
+  // Criando array "shopCart".
+  var shopCart = new Array();
+  
+  // Criando arrays "item" e adicionando valores a eles.
+  var item1 = ["Arroz", 2, "R$80"],
+  item2 = ["Feijão", 5, "R$40"],
+  item3 = ["Pão", 15, "R$10"],
+  item4 = ["Fermento", 4, "R$20"],
+  item5 = ["Aveia", 4, "R$20"],
+  item6 = ["Presunto", "500g", "R$10"],
+  item7 = ["Mussarela", "250g", "R$10"],
+  item8 = ["Waffer", 4, "R$10"],
+  item9 = ["Manteiga", 2, "R$10"],
+  item10 = ["Bombom", 4, "R$15"];
+  
+  // Adicionando os arrays "item" dentro do array "shopCart".
+  shopCart.push(item1);
+  shopCart.push(item2);
+  shopCart.push(item3);
+  shopCart.push(item4);
+  shopCart.push(item5);
+  shopCart.push(item6);
+  shopCart.push(item7);
+  shopCart.push(item8);
+  shopCart.push(item9);
+  shopCart.push(item10);
+  
+  // Para acessar um elemento dentro de "item" que está dentro de "shopCart" utilize NomeDoarray[IndiceDoItem1][indiceDoItem2].
+  // Exemplo: shopCart[0][0] item1/Arroz
+  
+  // Pergunta ao usuário
+  var itemSearch = prompt("Procure por um item na lista de compras:");
+  
+  function searchItem(item) {
+    // Pega o número de itens dentro de "shopCart"
+    var cartLeng = shopCart.length;
+    
+    // Pegando o elemento HTML clm id "text".
+    var putText = document
+      .querySelector("#text");
+      
+    // Variavel para incremento no loop e funciona como índice dos itens no array.
+    var lengItem = 0;
+    
+    // Enquanto "lengItem" for menor que "cartlent", o loop continua.
+    while (lengItem < cartLeng) {
+      // Verificando se dentro de cada item, na posição 1 (0), possui o item procurado. Se não encontrar, retorna -1, se encontrar, retorna a posição do elemento (que no caso é 0).
+      // Se remover "[0]" ele irá pesquisar também por nome, quantidade e preço.
+      var index = shopCart[lengItem][0]
+        .indexOf(item);
+      console.log(index);
+      
+      // Se "index" for igual ou maior que 0, ele entrará e fará a impressão dos itens.
+      if (index >= 0) {
+        putText.innerHTML = "Item: "+shopCart[lengItem][0]+"<br>Quantidade: "+shopCart[lengItem][1]+"<br>Preço: "+shopCart[lengItem][2];
+        
+        // Quebra a função após a impressão.
+        break;
+      }
+      
+      // Incrementa "lengItem" ao longo do loop.
+      lengItem++;
+    }
+    
+    // Se "lengItem" for igual a "cartLeng" (número de itens do carrinho), fará a impressão da mensagem.
+    if (lengItem == cartLeng) {
+      putText.innerHTML = "Desculpe, mas não encontramos o item pesquisado. 😔";
+    }
+  }
+  
+  // Chamando a função
+  searchItem(itemSearch);
+</script>
+</body>
+</html>
