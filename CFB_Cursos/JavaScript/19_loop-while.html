@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>loop while</title>
+</head>
+
+<body>
+<script>
+  function reason(start, until, reason) {
+    var count = 0;
+    
+    if (start <= until) {
+      while (start <= until) {
+        console.log(start +" | "+ count);
+        start += reason;
+        count++;
+      }
+    } else {
+      while (start >= until) {
+        console.log(start +" | "+ count);
+        start -= reason;
+        count++;
+      }
+    }
+  }
+  
+  var startValue = prompt("Valor inicial:");
+  var untilValue = prompt("Valor final:");
+  var reasonValue = prompt("Razão:");
+  
+  var txt = "🛑 Insira apenas valores numéricos! 🛑";
+  
+  if ((startValue === "") || (untilValue === "") || (reasonValue === ""))
+    alert(txt + "a");
+  else if ((startValue === null) || (untilValue === null) || (reasonValue === null))
+    alert(txt + "b");
+  else {
+    startValue = +startValue;
+    untilValue = +untilValue;
+    reasonValue = +reasonValue;
+    
+    reason(startValue, untilValue, reasonValue);
+  }
+  
+</script>
+</body>
+</html>
