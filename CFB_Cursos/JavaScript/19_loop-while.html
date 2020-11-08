@@ -1,49 +1,113 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>loop while</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>loop while</title>
 </head>
 
 <body>
-<script>
-  function reason(start, until, reason) {
-    var count = 0;
-    
-    if (start <= until) {
-      while (start <= until) {
-        console.log(start +" | "+ count);
-        start += reason;
-        count++;
-      }
-    } else {
-      while (start >= until) {
-        console.log(start +" | "+ count);
-        start -= reason;
-        count++;
+  <script>
+    // Loop while
+
+    // O primeiro parâmetro fica fora do bloco, ele serve como contador.
+    // O segundo parâmetro é a condição.
+    // O terceiro é o incremendo ou decremento do primeiro parâmetro.
+
+    // var count = 0; <~P1
+    // while (count < 10) <~P2 {
+    //   whileole.log(count);
+    //   count++; <~P3
+    // }
+
+
+    function reason(start, until, reason) {
+      var count = 0;
+
+      if (start <= until) {
+        while (start <= until) {
+          console.log(start + " | " + count);
+          start += reason;
+          count++;
+        }
+      } else {
+        while (start >= until) {
+          console.log(start + " | " + count);
+          start -= reason;
+          count++;
+        }
       }
     }
-  }
-  
-  var startValue = prompt("Valor inicial:");
-  var untilValue = prompt("Valor final:");
-  var reasonValue = prompt("Razão:");
-  
-  var txt = "🛑 Insira apenas valores numéricos! 🛑";
-  
-  if ((startValue === "") || (untilValue === "") || (reasonValue === ""))
-    alert(txt + "a");
-  else if ((startValue === null) || (untilValue === null) || (reasonValue === null))
-    alert(txt + "b");
-  else {
-    startValue = +startValue;
-    untilValue = +untilValue;
-    reasonValue = +reasonValue;
-    
-    reason(startValue, untilValue, reasonValue);
-  }
-  
-</script>
+
+    // Pede os valores para o cálculo.
+    var startValue = prompt("Valor inicial:");
+    var untilValue = prompt("Valor final:");
+    var reasonValue = prompt("Razão:");
+
+    // Armazena as variáveis com os valores do prompt.
+    var arrayPromp = [startValue, untilValue, reasonValue];
+    // Array para verificar se alguma letra foi passada.
+    var arrayAbc = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "ç"];
+
+    // Texto do alerta.
+    var txt = "🛑 Insira apenas valores numéricos! 🛑";
+
+    // Verifica se foi passado alguma string vazia.
+    if ((startValue === "") || (untilValue === "") || (reasonValue === ""))
+      alert(txt);
+    // Verifica se foi passado nulo.
+    else if ((startValue === null) || (untilValue === null) || (reasonValue === null))
+      alert(txt);
+    else {
+      // Condição para o primeiro loop que percorre "arrayPromp".
+      // Pega o comprimeiro de "arrayPromp".
+      var prompLeng = arrayPromp.length;
+      // Contador do "arrayPromp".
+      var prompCount = 0;
+      
+      // Se o "prompCount" for menor que "prompLeng", o loop continuará.
+      while (prompCount < prompLeng) {
+        
+        // Condição para o segundo loop que percorre "arrayAbc".
+        // Pega o comprimento de "arrayAbc".
+        var abcLeng = arrayAbc.length;
+        // Contador do "arrayAbc".
+        var abcCount = 0;
+        
+        // Se "abcCount" for menor que "abcLeng", o loop continuará.
+        while (abcCount < abcLeng) {
+          // A cada loop, verifica se dentro dos valores de "arrayPromp" existe algum valor de "arrayAbc".
+          // Se encontrar, irá retornar a posição da primeira ocorrência. Caso não, retorna "-1".
+          var verify = arrayPromp[prompCount].indexOf(arrayAbc[abcCount]);
+          // Se "verify" for maior ou igual a "0", entrará no bloco.
+          if (verify >= 0) {
+            alert(txt);
+            // Incrementa o contador do loop anterior para dar um "break" nele.
+            prompCount = 9*99999;
+            // Interrompe o loop atual.
+            break;
+          } else
+            // Incrementa "abcCount" para veriricar cada valor de "arrayAbc".
+            abcCount++;
+        }
+        // Se "prompCount" for igua a "prompLeng - 1", ele entra no bloco.
+        if (prompCount === prompLeng - 1) {
+          // Transforma os valores do prompt que são em 'string' para 'number'.
+          // Em string ele erá concatenar e não somar os valores.
+          startValue = +startValue;
+          untilValue = +untilValue;
+          reasonValue = +reasonValue;
+          // Chama a função com os valores passados no prompt.
+          reason(startValue, untilValue, reasonValue);
+          // break de segurança monkaS.
+          break;
+        }
+        // Incrementa "prompCount" para verifiar o próximo valor de "arrayPromp".
+        prompCount++;
+      }
+    }
+  </script>
 </body>
+
 </html>
