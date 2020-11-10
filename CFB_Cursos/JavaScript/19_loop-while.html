@@ -22,19 +22,19 @@
     // }
 
 
-    function reason(start, until, reason) {
+    function ratio(start, until, ratio) {
       var count = 0;
 
       if (start <= until) {
         while (start <= until) {
           console.log(start + " | " + count);
-          start += reason;
+          start += ratio;
           count++;
         }
       } else {
         while (start >= until) {
           console.log(start + " | " + count);
-          start -= reason;
+          start -= ratio;
           count++;
         }
       }
@@ -43,10 +43,10 @@
     // Pede os valores para o cálculo.
     var startValue = prompt("Valor inicial:");
     var untilValue = prompt("Valor final:");
-    var reasonValue = prompt("Razão:");
+    var ratioValue = prompt("Razão:");
 
     // Armazena as variáveis com os valores do prompt.
-    var arrayPromp = [startValue, untilValue, reasonValue];
+    var arrayPromp = [startValue, untilValue, ratioValue];
     // Array para verificar se alguma letra foi passada.
     var arrayAbc = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "ç"];
 
@@ -54,10 +54,10 @@
     var txt = "🛑 Insira apenas valores numéricos! 🛑";
 
     // Verifica se foi passado alguma string vazia.
-    if ((startValue === "") || (untilValue === "") || (reasonValue === ""))
+    if ((startValue === "") || (untilValue === "") || (ratioValue === ""))
       alert(txt);
     // Verifica se foi passado nulo.
-    else if ((startValue === null) || (untilValue === null) || (reasonValue === null))
+    else if ((startValue === null) || (untilValue === null) || (ratioValue === null))
       alert(txt);
     else {
       // Condição para o primeiro loop que percorre "arrayPromp".
@@ -97,9 +97,9 @@
           // Em string ele erá concatenar e não somar os valores.
           startValue = +startValue;
           untilValue = +untilValue;
-          reasonValue = +reasonValue;
+          ratioValue = +ratioValue;
           // Chama a função com os valores passados no prompt.
-          reason(startValue, untilValue, reasonValue);
+          ratio(startValue, untilValue, ratioValue);
           // break de segurança monkaS.
           break;
         }
