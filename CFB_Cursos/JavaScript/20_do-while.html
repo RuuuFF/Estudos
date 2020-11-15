@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>do - while</title>
+</head>
+
+<body>
+<script>
+  // O loop "do...while" executa uma vez a declaração no bloco de comando, e logo depois verifica a condição.
+  
+  // Declarando a variável ~ as aspas são para não concatenar com o valor "undefined".
+  var result = "";
+  // Declarando a condição do loop.
+  var i = 0;
+  
+  // "do" executa o bloco UMA vez e apenas depois "while" verifica se a condição passada é verdadeira para dar continuidade ao loop.
+  do {
+    i++;
+    result += i + " ";
+    console.log(result);
+  } while (i > 10);
+  
+</script>
+</body>
+
+</html>

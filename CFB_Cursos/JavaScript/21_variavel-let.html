@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>variável let</title>
+</head>
+
+<body>
+<script>
+  // "let" permite que você declare variáveis limitando seu escopo no bloco "{}", instrução, ou em uma expressão "()" na qual ela é usada. 
+  // Isso é inverso da keyword var, que define uma variável globalmente ou no escopo inteiro de uma função, independentemente do escopo de bloco.
+  // Escopo é a propriedade que determina onde uma variável pode ser utilizada dentro de um programa
+  
+  var a = 10;
+  let b = 5;
+  
+  if (a === 10) {
+    var a = 20;
+    let b = 10;
+    console.log(b); // 10
+  }
+  console.log(a); // 20
+  console.log(b); // 5
+  
+  // Mais detalhes ↓
+  // https://blog.schoolofnet.com/diferenca-entre-var-e-let-no-javascript/
+</script>
+</body>
+</html>

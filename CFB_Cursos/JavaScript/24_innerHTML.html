@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>innerHTML</title>
+</head>
+<body>
+  <p id="txt">JavaScript</p>
+  <input type="text" id="inputTxt" value="JavaScript">
+<script>
+  // Com "innerHTML" é possível obter ou modificar o conteúdo de uma tag HTML.
+  
+  var input = document
+    .getElementById("inputTxt");
+  input.value = "HTML e CSS";
+  
+  var p = document
+    .getElementById("txt");
+  var saveP = p.innerHTML;
+  p.innerHTML = "Mudando o conteúdo";
+  
+  console.log(saveP);
+</script>
+</body>
+</html>

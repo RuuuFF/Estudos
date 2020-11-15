@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>getElementsByTagName</title>
+</head>
+<body>
+  <p>Primeiro</p>
+  <p>Segundo</p>
+  <p>Terceiro</p>
+  <p>Quarto</p>
+  <p>Quinto</p>
+<script>
+  // "getElementsByTagName" retorna um conjunto de elementos da tag especificada (em qualquer lugar do documento HTML) em forma de vetor (array).
+  // Para pegar todos os elementos da página, utilize "*". | Tags de fechamento não contam.
+  // Os índices do array começam em 0.
+  
+  var allTagsP = document
+    .getElementsByTagName("p");
+  
+  for (var i = 0; i < allTagsP.length; i++) {
+    allTagsP[i].style.color = "red";
+    console.log(i);
+  }
+</script>
+</body>
+</html>

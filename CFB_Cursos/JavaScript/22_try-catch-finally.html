@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>tratamento de erros</title>
+</head>
+<body>
+<script>
+  // As declarações "try...catch" marcam um bloco de declarações para testar (try), e especifica uma resposta, caso uma exceção (erro) seja lançada.
+  
+  
+  
+  // "try" executa uma ou mais declarações para tratar algum provável erro (exceção), e, caso encontre, ele para imediatamente e envia a exceção para "catch" tratar.
+  
+  // "throw" gera uma exceção. | É opcional.
+  
+  // "catch" contém declarações que especificam o que fazer caso uma exceção (erro) seja lançada do bloco "try".
+  
+  // "finally" é executado depois que a declaração "try" e "catch" são executadas, independetemente se uma exceção (erro) foi lançada ou não. | Pode ser omitido.
+
+  var num;
+  try {
+    num = prompt("Digite um valor");
+    if (num > 10) {
+      throw new Error("🛑 O valor máximo é 10. 🛑");
+    }
+  } catch (e) {
+    console.log(e.message);
+    num = 10;
+    
+    // e         ~> objeto
+    // e.message ~> string
+  } finally {
+    document.write("Valor: " + num)
+  }
+  
+</script>
+</body>
+</html>
