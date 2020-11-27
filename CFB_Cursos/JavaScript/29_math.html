@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Math</title>
+</head>
+<body>
+<script>
+  // Constantes retornam valores já calculados:
+  var pi = Math.PI; // Pi
+  var euler = Math.E; // Euler
+  var root2 = Math.SQRT2; // Raíz quadrada de dois.
+  var root1_2 = Math.SQRT1_2; // Raíz quadrada de 1 sobre 2.
+  
+  
+  // Métodos:
+  var abs = Math.abs(-10); // Retorna o valor absoluto (positivo).
+  var pow = Math.pow(5, 4); // Retorna o resultado de 5 elevado a 4 (5x5x5x5).
+  var sqrt = Math.sqrt(9); // Retorna a raíz quadrada de 9.
+  var random = Math.random(); // Retorna um valor aleatório entre 0 e 1.
+  var max = Math.max(78, 17, 9, 1 , -6); // Retorna o maior valor na lista de argumentos.
+  var min = Math.min(27, -18, 93, 7, 4); // Retorna o menor valor na lista de argumentos.
+  
+  
+  // Métodos para arredondar números decimais:
+  var ceil = Math.ceil(12.3); // Arredonda para cima independente do valor decimal.
+  var floor = Math.floor(8.78); // Arredonda para baixo independente do valor decimal.
+  var round = Math.round(10.5); // Se for menor que ".5", ele arredonda para baixo, e se for maior ou igual a ".5", arredonda para cima.
+  
+  
+  // Seno e cosseno
+  // Recebe o valor em radiano.
+  // Para converter em radiano, acrescente "* Math.PI / 180".
+  var angle = 90;
+  var toRadian = Math.PI / 180;
+  var seno = Math.sin(angle * toRadian);
+  var cosseno = Math.cos(angle * toRadian);
+  
+  document.write("Angulo: " + angle + "<br>Seno: " + seno + "<br>Cosseno: " + cosseno);
+  
+  // Mais sobre o objeto "Math": https://www.w3schools.com/js/js_math.asp
+  // Mais sobre o método "random()": https://www.w3schools.com/js/js_random.asp
+</script>
+</body>
+</html>

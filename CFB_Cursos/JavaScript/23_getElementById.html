@@ -6,19 +6,26 @@
     <title>getElementById</title>
 </head>
 <body>
-  <div id="box"></div>
+  <div id="box">A</div>
+  <div id="box">B</div>
+  <div id="box">C</div>
 <script>
   // "getElementById" é da classe "document".
   
   // "getElementById" permite manipular algum elemento do HTML refereciando seu id.
+  // Seu ID deve ser único dentro da página HTML. Se houver mais de um elemento com o ID especificado, ele retornará o primeiro elemento no código-fonte.
+  // Retorna "null" se nenhum elemento com o ID especificado existir.
   
   var box = document
     .getElementById("box");
   
   box.style.width = "100px";
   box.style.height = "100px";
-  box.style.border = "2px solid black"
-  box.style.background = "blue";
+  box.style.border = "1px solid black"
+  box.style.background = "lightblue";
+  box.style.display = "flex";
+  box.style.alignItems = "center";
+  box.style.justifyContent = "center";
 </script>
 </body>
 </html>

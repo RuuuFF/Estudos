@@ -8,19 +8,48 @@
 <body>
   <p id="txt">JavaScript</p>
   <input type="text" id="inputTxt" value="JavaScript">
+  
+  
+  <div id="um">
+    <div class="dois">
+      <p>1</p>
+    </div>
+    <div class="dois">
+      <p>2</p>
+    </div>
+  </div>
+  
+<style>
+  #um {
+    background: blue;
+  }
+  
+  .dois {
+    background: green;
+  }
+</style>
+
 <script>
-  // Com "innerHTML" é possível obter ou modificar o conteúdo de uma tag HTML.
+  // Com "innerHTML" é possível obter ou modificar o conteúdo (textos e elementos) de uma tag HTML.
   
   var input = document
     .getElementById("inputTxt");
   input.value = "HTML e CSS";
+  input.placeholder = "Teste";
+  // href, target, etc...
   
   var p = document
     .getElementById("txt");
   var saveP = p.innerHTML;
   p.innerHTML = "Mudando o conteúdo";
-  
   console.log(saveP);
+  
+  
+  var content = document
+    .getElementById("um").innerHTML;
+  document.write(content);
+  document.write(content);
+  
 </script>
 </body>
 </html>

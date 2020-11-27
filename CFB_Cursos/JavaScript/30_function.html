@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>function</title>
+</head>
+<body>
+<script>
+  /* 
+  Uma função JavaScript é definida com a palavra-chave "function", seguido por um nome, seguido por parênteses ().
+  
+  - Os nomes das funções podem conter letras, dígitos, sublinhados e cifrões ($)(mesmas regras das variáveis).
+  - Os parênteses podem incluir nomes de parâmetros separados por vírgulas: (p1, p2, ...). 
+  - O código para ser executado pela função fica dentro dos colchetes "{ ... }".
+  
+  - Os argumentos da função são os valores recebidos pela função quando ela é chamada.
+  - Dentro da função, os argumentos (os parâmetros) se comportam como variáveis locais.
+  */
+
+
+  // Função que calcula média
+  // Declarando o array
+  var numbers = [1, 8, 2, 90, 24, 18, 3, 19, 20, 197, 48, 6, 9, 4, 7, 5];
+  // Declarando a função
+  function average(nums) {
+    // Pegando o comprimento do array passado para nums
+    var numsLeng = nums.length;
+    // Declarando a variável que vai receber a soma
+    var sum = 0;
+    for (var i = 0; i < numsLeng; i++) {
+      // Pegando cada valor dentro do parâmetro "nums" e somando.
+      sum += nums[i];
+    }
+    // Dividindo a soma de todos os valores pela quantidade de elementos no array para obter a média.
+    return Math.round(sum / numsLeng);
+  }
+  // Chamando a função "average" dentro do console e passando o array "numbers" para ela.
+  console.log(average(numbers));
+  
+  
+  
+  // Convertendo fahrenheit para celsius
+  function toCelsius(fahrenheit) {
+    return (5/9) * (fahrenheit - 32);
+    // 5/9 = 0,555555555...
+  }
+  console.log(toCelsius(8320));
+  
+  
+  // Mais sobre funções: https://www.w3schools.com/js/js_functions.asp
+</script>
+</body>
+</html>

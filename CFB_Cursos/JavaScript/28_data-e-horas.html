@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>data e hora</title>
+</head>
+
+<body>
+  <p id="date"></p>
+  <p id="hour"></p>
+<script>
+var delay = 0;
+setInterval(() => {
+  var date = new Date(); // Parâmetros: Ano, mês, dia, hora, minutos, segundos, milisegundos.
+  var newDate = new Date();
+  newDate.setHours(date.getHours() + 1); // "setHours" e "getHours"
+  
+  // Data:
+  var day = newDate.getDate();
+  var dayWeekIndex = newDate.getDay(); // Domingo = 0 | Sábado = 6.
+  var monthIndex = newDate.getMonth(); // Janeiro = 0 | Dezembro = 11.
+  var year = newDate.getFullYear();
+  
+  // Horas:
+  var hour = newDate.getHours();
+  var minutes = newDate.getMinutes();
+  var seconds = newDate.getSeconds();
+  
+  if (hour < 10) hour = "0" + hour;
+  if (minutes < 10) minutes = "0" + minutes;
+  if (seconds < 10) seconds = "0" + seconds;
+  
+  var weeks = ["Domingo", "Segunda", "Terça-feira", "Quarta-feira", "Quinta-feira", "Sexta-feira", "Sábado"];
+  var months = ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"];
+
+  var dayWeekName = weeks[dayWeekIndex];
+  var monthName = months[monthIndex];
+
+  var printDate = document.querySelector("#date");
+  var printHour = document.querySelector("#hour");
+  
+  printDate.innerHTML = `${dayWeekName}, ${day} de ${monthName} de ${year}.`;
+  printHour.innerHTML = `${hour}:${minutes}:${seconds}`;
+}, delay);
+delay = 1000;
+  
+  // https://css-tricks.com/everything-you-need-to-know-about-date-in-javascript/
+</script>
+</body>
+</html>

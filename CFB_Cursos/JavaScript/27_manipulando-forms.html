@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>manipulando elementos de fórmulario</title>
+</head>
+<body>
+  <form action="#" name="curso1" id="curso1" method="post">
+    <label>Nome</label>
+    <input type="text" id="teste" value="Primeiro - 1" name="fNome">
+    <label>Senha</label>
+    <input type="password" name="fSenha" value="123">
+    <input type="submit" name="btEnviar" value="Enviar">
+  </form>
+  
+  <form action="#" name="curso2" id="curso2" method="post">
+    <label>Nome</label>
+    <input type="text" id="teste" value="Segundo - 2" name="fNome">
+    <label>Senha</label>
+    <input type="password" name="fSenha" value="123">
+    <input type="submit" name="btEnviar" value="Enviar">
+  </form>
+  
+  <hr>
+  
+<style>
+  form {
+    background: lightgray;
+  }
+  
+  label,
+  input {
+    display: block;
+  }
+  
+  input[type=submit],
+  label {
+    margin-top: 10px;
+  }
+</style>
+<script>
+
+  var myForm;
+  var el;
+  
+  // Diferentes maneiras de ter acesso ao formulário:
+  // myForm = document.forms["curso2"].innerHTML;
+  // myForm = document.forms.item(0).id;
+  // myForm = document.forms.namedItem("curso2").innerHTML;
+  // myForm = document.getElementById("curso1").elements[0].value;
+  
+  
+  // Apontar para os elementos do formulário:
+  // "elements" não identifica "label".
+  myForm = document.forms[0];
+  el = myForm.elements[0].value;
+  
+  document.write(el);
+  
+  
+  // https://www.w3schools.com/js/js_input_examples.asp
+</script>
+</body>
+</html>

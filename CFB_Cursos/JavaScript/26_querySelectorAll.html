@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>querySelectorAll</title>
+</head>
+<body>
+  <header class="header">
+    <div class="div1">
+      <p class="p1">Primeiro</p>
+    </div>
+    <div class="div2">
+      <p class="p2">Segundo</p>
+    </div>
+  </header>
+  <main>
+    <h1>h1</h1>
+    <h2>h2</h2>
+    <h3>h3</h3>
+  </main>
+<style>
+  header {
+    background: lightblue;
+  }
+  
+  main {
+    background: cyan;
+  }
+  
+  header, main {
+    padding: 10px;
+    margin: 10px 0;
+  }
+  
+  div {
+    background: lightgreen;
+    
+    padding: 10px;
+    margin: 10px 0;
+  }
+</style>
+<script>
+  // "querySelectorAll" retorna todos os elementos do documento que corresponda ao SELETOR CSS especificado como um objeto NodeList.
+  // NodeList representa uma coleção de nós. Nós podem ser acessados por números de index. Index começam em 0.
+  
+  // Os itens HTMLCollection podem ser acessados por seu nome, id ou número de índice.
+  // Os itens NodeList só podem ser acessados por seu número de índice.
+  
+  var el = document
+    .querySelectorAll("h1, h2, .p1");
+    
+  for (var i = 0; i < el.length; i++) {
+    el[i].style.color = "red";
+  }
+  
+  
+  // "NodeList" parece um array, mas não é.
+  // É possível percorrer "NodeList" e referir-se a seus nós como uma matriz (array). Mas não é possível usar métodos de matriz, como "valueOf()", "push()", "pop()" ou "join()" em uma "NodeList".
+  
+  // https://www.w3schools.com/js/js_htmldom_nodelist.asp
+</script>
+</body>
+</html>
