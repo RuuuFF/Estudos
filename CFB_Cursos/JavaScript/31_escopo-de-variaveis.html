@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>escopo de variáveis</title>
+</head>
+<body>
+<script>
+  var color = "blue"; // Escopo global
+  
+  function myColor() {
+    var color = "red"; // Escopo local
+    
+    // "this" consegue pegar a variável global "color" que está fora da função.
+    // O "color" seguinte é do escopo local.
+    document.write(this.color + "<br>" + color + "<br>");
+    
+    // Variáveis sem "var" são declaradas como globais implicitamente e podem ser acessadas fora da função.
+    anotherColor = "orange";
+  }
+  myColor();
+  // Exibe "color" da variável global.
+  document.write(color+"<br>");
+  
+  // Exibe "anotherColor" que foi iniciada dentro da função "myColor".
+  document.write(anotherColor);
+  
+  
+  // https://medium.com/weyes/entendendo-o-uso-de-escopo-no-javascript-3669172ca5ba
+  // https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Guide/Grammar_and_Types#Variable_scope
+  // https://imasters.com.br/desenvolvimento/escopos-em-javascript
+</script>
+</body>
+</html>

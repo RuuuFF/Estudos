@@ -8,7 +8,7 @@
 <body>
 <script>
   /* 
-  Uma função JavaScript é definida com a palavra-chave "function", seguido por um nome, seguido por parênteses ().
+  Uma função JavaScript é definida com a palavra-chave "function", seguido por um nome, seguido por parênteses (), seguido pelos colchetes {} onde fica o código a ser executado.
   
   - Os nomes das funções podem conter letras, dígitos, sublinhados e cifrões ($)(mesmas regras das variáveis).
   - Os parênteses podem incluir nomes de parâmetros separados por vírgulas: (p1, p2, ...). 
@@ -19,7 +19,7 @@
   */
 
 
-  // Função que calcula média
+  // Função que calcula média em um array
   // Declarando o array
   var numbers = [1, 8, 2, 90, 24, 18, 3, 19, 20, 197, 48, 6, 9, 4, 7, 5];
   // Declarando a função
@@ -42,10 +42,10 @@
   
   // Convertendo fahrenheit para celsius
   function toCelsius(fahrenheit) {
-    return (5/9) * (fahrenheit - 32);
+    return Math.round((5/9) * (fahrenheit - 32));
     // 5/9 = 0,555555555...
   }
-  console.log(toCelsius(8320));
+  console.log(toCelsius(74));
   
   
   // Mais sobre funções: https://www.w3schools.com/js/js_functions.asp

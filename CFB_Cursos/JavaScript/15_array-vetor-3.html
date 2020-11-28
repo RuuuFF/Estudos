@@ -29,6 +29,8 @@
   
   if (pos >= 0) {
     txtEl.innerHTML = "Sua cor: \"" + searchItem + "\"<br>Seu índice: " + pos;
+  } else if (searchItem === null) {
+    txtEl.innerHTML = "Forneça algum valor.";
   } else {
     txtEl.innerHTML = "\""+ searchItem + "\" não encontrado.";
   }
@@ -37,20 +39,33 @@
   var num1 = [1, 3, 5, 7, 9, 2, 4, 6, 8, 0];
   var num2 = ["oito", "zero", "cinco", "sete", "três", "nove", "quatro", "um", "seis", "dois"];
   
+  
   // "concat" é utilizado para juntar dois ou mais arrays em um novo array sem alterar os outros.
   var numConcat = num1.concat(num2);
+
 
   // "sort" ordena os elementos do array. Strings em ordem alfabética e number do menor para o maior.
   numConcat.sort();
   
+  
   // "reverse" inverte os elementos de um vetor, fazendo com que o último se torne o primeiro, o primeiro se torne o último e os intermediários sigam a mesma lógica.
   numConcat.reverse();
+  
   
   // "join" retorna uma string contendo todos os elementos do array separados por vírgula. No parâmetros é informado um texto para ser vir como separador.
   var numbers = numConcat.join(" - ");
   
   
+  // "slice()" retorna os elementos selecionados em um array, como um novo array.
+  // "slice" seleciona os elementos começando no argumento inicial fornecido e termina, mas não inclui, o argumento final fornecido.
+  var txt = "Estudando JavaScript"; // 20
+  var txtLeng = txt.length;
+  var x = txt.slice(0, 19);
+  
+  
   // http://www.linhadecodigo.com.br/artigo/3554/funcoes-de-manipulacao-de-vetores-do-javascript.aspx
+  
+  // slice: https://www.w3schools.com/jsref/jsref_slice_array.asp
 </script>
 </body>
 </html>
