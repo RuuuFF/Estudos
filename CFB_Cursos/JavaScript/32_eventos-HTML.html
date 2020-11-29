@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>eventos HTML</title>
+</head>
+<body>
+  <div id="myDiv" onmouseover="colorChange(this, 'blue')" onmouseout="colorChange(this, 'red')"></div></div>
+  <button id="myButton" onclick="selectColor()">Me clica</button>
+<style>
+  * {
+    box-sizing: border-box;
+  }
+  
+  div {
+    width: 200px;
+    height: 200px;
+    
+    border: 1px solid black;
+  }
+  button {
+    width: 200px;
+    height: 40px;
+    
+    border: 1px solid black;
+  }
+</style>
+<script>
+  // Os eventos HTML são "coisas" que acontecem aos elementos HTML.
+  // Um evento HTML pode ser algo que o navegador ou um usuário faz, como terminar de carregar a página, um campo input for alterado ou um botão sendo clicado, etc.
+  
+  // HTML permite que atributos de manipulador de eventos, com código JavaScript, sejam adicionados a elementos HTML.
+  
+  function colorChange(obj, color) {
+  	obj.style.backgroundColor = color;
+  }
+  
+  function selectColor() {
+    var obj = document.getElementById("myDiv");
+    var color = prompt("Qual cor deseja? escreva em inglês*")
+    obj.style.backgroundColor = color;
+  }
+</script>
+</body>
+</html>
