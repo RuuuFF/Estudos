@@ -7,24 +7,49 @@
 </head>
 <body>
   <div id="myDiv" onmouseover="colorChange(this, 'blue')" onmouseout="colorChange(this, 'red')"></div></div>
-  <button id="myButton" onclick="selectColor()">Me clica</button>
+  <button id="myButton" onclick="selectColor()" onmouseover="changePos(this)">Me clica</button>
+  
+  <input type="text" onfocus="onFocus(this)" onblur="onBlur(this)" required/>
 <style>
   * {
     box-sizing: border-box;
   }
   
   div {
-    width: 200px;
     height: 200px;
-    
-    border: 1px solid black;
   }
+  
+  div,
+  button,
+  input {
+    border: 1px solid #000;
+  }
+  
+  div,
   button {
-    width: 200px;
-    height: 40px;
-    
-    border: 1px solid black;
+    border-bottom: 0;
   }
+  
+  div,
+  button,
+  input {
+    width: 200px;
+  }
+  
+  button,
+  input {
+    height: 40px;
+  }
+  
+  input {
+    padding: 0 10px;
+  }
+  
+  /* tambêm tem "focus". 
+  https://github.com/ruuuff/happy
+  input:valid {
+    border: 1px solid green;
+  }*/
 </style>
 <script>
   // Os eventos HTML são "coisas" que acontecem aos elementos HTML.
@@ -38,9 +63,28 @@
   
   function selectColor() {
     var obj = document.getElementById("myDiv");
-    var color = prompt("Qual cor deseja? escreva em inglês*")
+    var color = prompt("Qual cor deseja? escreva em inglês*");
     obj.style.backgroundColor = color;
   }
+  
+  function changePos(obj) {
+    obj.style.position = "absolute";
+    obj.style.left = Math.round(Math.random() * 180) + "px";
+    obj.style.top = Math.round(Math.random() * 500) + "px";
+  }
+  
+  function onFocus(obj) {
+    obj.style.backgroundColor = "lightsalmon";
+    obj.style.border = "1px solid red";
+  }
+  function onBlur(obj) {
+    obj.style.backgroundColor = "#FFF";
+    obj.style.border = "1px solid black";
+  }
+  
+  // https://www.w3schools.com/js/js_events.asp
+  // https://www.w3schools.com/js/js_events_examples.asp
+  // https://www.tutorialspoint.com/javascript/javascript_events.htm
 </script>
 </body>
 </html>

@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>addEventListener 1</title>
+</head>
+<body>
+  <div id="container">
+    <div id="div">- - -</div>
+    <button id="button">Cliques</button>
+    <div id="ratio-container">
+      <div id="one">1</div>
+      <div id="five">5</div>
+      <div id="ten">10</div>
+    </div>
+  </div>
+  <div id="x">X</div>
+<style>
+  * {
+    padding: 0;
+    margin: 0;
+    
+    box-sizing: border-box;
+  }
+  
+  body,
+  #div,
+  #x,
+  #one, #five, #ten {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  body {
+    width: 100vw;
+    height: 100vh;
+  }
+  
+  #div {
+    background-color: white;
+    
+    border-radius: 10px 10px 0 0;
+  }
+  
+  #div,
+  button,
+  #ratio-container {
+    width: 200px;
+  }
+  
+  #div,
+  button,
+  #ratio-container,
+  #x {
+    border: 1px solid black;
+  }
+  
+  button,
+  #ratio-container {
+    border-top: 0;
+  }
+  
+  button,
+  #one, #five, #ten {
+    background-color: lightgray;
+  }
+  
+  #one {
+    border-right: 1px solid black;
+  }
+  
+  #ten {
+    border-left: 1px solid black;
+  }
+  
+  #div,
+  button,
+  #one, #five, #ten {
+    height: 50px;
+  }
+  
+  #ratio-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  
+  #x {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    
+    width: 35px;
+    height: 35px;
+    
+    background-color: lightcoral;
+    transition: .3s;
+  }
+  
+  #x:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
+</style>
+<script>
+  // "addEventListener()" é um método do objeto "document".
+  
+  // "addEventListener()" é uma função embutida no JavaScript que leva o evento para ouvir (como um click) e um segundo argumento a ser chamado sempre que o evento descrito é acionado (uma função).
+  // addEventListener(evento, função)
+  
+  var div = document.getElementById("div");
+  var button = document.getElementById("button");
+  var one = document.getElementById("one");
+  var five = document.getElementById("five");
+  var ten = document.getElementById("ten");
+  var x = document.getElementById("x");
+  
+  var ratio = 1;
+  
+  // Função para trocar do elemento selecionado e tirar a de outras.
+  function ratioColorDisplay() {
+    switch (ratio) {
+      case 1:
+        one.style.backgroundColor = "green";
+        five.style.backgroundColor = "lightgray";
+        ten.style.backgroundColor = "lightgray";
+        break;
+      case 5:
+        one.style.backgroundColor = "lightgray";
+        five.style.backgroundColor = "green";
+        ten.style.backgroundColor = "lightgray";
+        break;
+      case 10:
+        one.style.backgroundColor = "lightgray";
+        five.style.backgroundColor = "lightgray";
+        ten.style.backgroundColor = "green";
+        break;
+    }
+  }
+  ratioColorDisplay();
+  
+  
+  // Muda a razão e chama a função que indicar qual está selecionada.
+  one.addEventListener("click", function() {
+    ratio = 1;
+    ratioColorDisplay();
+  });
+  five.addEventListener("click", function() {
+    ratio = 5;
+    ratioColorDisplay();
+  });
+  ten.addEventListener("click", function() {
+    ratio = 10;
+    ratioColorDisplay();
+  });
+  
+  
+  // Contador.
+  var count = 0;
+  button.addEventListener("click", function() {
+    count += ratio;
+    div.innerHTML = count;
+  });
+  
+  
+  // Zera o contador e imprime 0.
+  x.addEventListener("click", function() {
+    count = 0;
+    div.innerHTML = count;
+  });
+  
+  
+  // X style mouseover e mouseout
+  x.addEventListener("mouseover", function() {
+    x.style.backgroundColor = "lightblue";
+  });
+  x.addEventListener("mouseout", function() {
+    x.style.backgroundColor = "lightcoral";
+  });
+  
+  
+  // Alerta quando a janela carregar
+  window.addEventListener("load", function() {
+    alert("aoba");
+  });
+  
+  
+  // https://www.w3schools.com/jsref/met_document_addeventlistener.asp
+</script>
+</body>
+</html>
